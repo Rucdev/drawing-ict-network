@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cable.schema.json",
+  "title": "Cable",
+  "type": "object",
+  "required": ["id", "endpoints"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "endpoints": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "string",
+        "pattern": "^[^:]+:[^:]+$"
+      }
+    },
+    "media": {
+      "type": "string",
+      "enum": ["SMF", "MMF", "copper", "DAC", "AOC"]
+    },
+    "length_m": {
+      "type": "number",
+      "minimum": 0
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cables-file.schema.json",
+  "title": "CablesFile",
+  "type": "object",
+  "required": ["cables"],
+  "additionalProperties": false,
+  "properties": {
+    "cables": {
+      "type": "array",
+      "items": {
+        "$ref": "./cable.schema.json"
+      }
+    }
+  }
+}
